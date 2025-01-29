@@ -7,4 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  base: '/Pinal-S-Curious-Learners/', // Replace <REPO_NAME> with your GitHub repository name
 });
