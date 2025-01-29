@@ -6,23 +6,33 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
+      # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
+      # Step 4: Ensure permissions for scripts
+      - name: Fix permissions for scripts
+        run: chmod +x ./node_modules/.bin/*
+
+      # Step 5: Build the project
       - name: Build project
         run: npm run build
 
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
