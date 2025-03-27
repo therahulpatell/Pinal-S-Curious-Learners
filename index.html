@@ -490,15 +490,15 @@
         <!-- Classes End -->
 
 
-        <!-- Appointment Start -->
+        <!-- Inquiry Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="bg-light rounded">
                     <div class="row g-0">
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <h1 class="mb-4">Make Appointment</h1>
-                                <form>
+                                <h1 class="mb-4">Submit Inquiry</h1>
+                                <form id="inquiry-form">
                                     <div class="row g-3">
                                         <div class="col-sm-6">
                                             <div class="form-floating">
@@ -537,10 +537,14 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                            <button class="btn btn-primary w-100 py-3" type="button" onclick="sendEmail()">Submit
+                                                Inquiry</button>
                                         </div>
                                     </div>
                                 </form>
+                                <div id="thank-you-message" style="display: none;">
+                                    <h3>Thank you for your inquiry! We will get back to you shortly.</h3>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
@@ -553,8 +557,7 @@
                 </div>
             </div>
         </div>
-        <!-- Appointment End -->
-
+        <!-- Inquiry End -->
 
         <!-- Team Start -->
         <!-- <div class="container-xxl py-5">
@@ -870,9 +873,12 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-    <!-- Template Javascript -->
+    <!-- Custom Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/sendEmail.js" defer></script>
+
 </body>
 
 </html>
