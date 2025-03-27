@@ -410,7 +410,7 @@ h6,
 /* Mobile responsive styling */
 @media (max-width: 767px) {
     .testimonial-item {
-        min-height: 350px; /* Set a smaller minimum height for mobile */
+        min-height: 400px; /* Set a smaller minimum height for mobile */
         padding: 20px; /* Reduce padding for mobile devices */
     }
 
