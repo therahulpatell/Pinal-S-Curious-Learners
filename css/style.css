@@ -399,6 +399,31 @@ h6,
     padding-right: 1.5rem;
 }
 
+/* Default styles for larger screens */
+.testimonial-item {
+    height: 350px; /* Set a fixed height for larger screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Mobile responsive styling */
+@media (max-width: 767px) {
+    .testimonial-item {
+        height: auto; /* Allow height to adjust based on content for small screens */
+        padding: 20px; /* Reduce padding for mobile devices */
+    }
+
+    .testimonial-item .ps-3 {
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+
+    .testimonial-item img {
+        width: 70px; /* Smaller images for mobile */
+        height: 70px;
+    }
+}
+
 @media (min-width: 576px) {
     .testimonial-carousel {
         padding-left: 4rem;
